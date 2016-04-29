@@ -56,10 +56,6 @@
 		</ul>
 	</div>
 	<script>
-	
-
-
-
 	var inner=document.querySelector(".inner")
 	var lis=inner.querySelectorAll('li');
 	var ow=lis[0].offsetWidth;
@@ -91,7 +87,7 @@
 			mx=e.clientX;
 			lenx=mx-dx;
 			dir=lenx>0?"right":"left";
-			inner.style.transform="translateX("+(movex+lenx)+"px)"
+			inner.style.transform="translate3d("+(movex+lenx)+"px,0,0)"
 		}
 		function ups(e){
 			var etime=e.timeStamp;
@@ -112,16 +108,16 @@
 				}
 				movex=-i*ow;
 				inner.style.transition="transform 1s";
-				inner.style.transform="translateX("+movex+"px)"
+				inner.style.transform="translate3d("+movex+"px,0,0)"
 			}else{
 				inner.style.transition="transform 1s";
-				inner.style.transform="translateX("+movex+"px)";
+				inner.style.transform="translate3d("+movex+"px,0,0)";
 			}
-			document.removeEventListener(mousemove,moves);
-			document.removeEventListener(mouseup,ups);
+			inner.removeEventListener(mousemove,moves);
+			inner.removeEventListener(mouseup,ups);
 		}
-		document.addEventListener(mousemove,moves);
-		document.addEventListener(mouseup,ups);
+		inner.addEventListener(mousemove,moves);
+		inner.addEventListener(mouseup,ups);
 		
 	})
 	</script>
