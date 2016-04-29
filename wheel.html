@@ -91,7 +91,7 @@
 			mx=e.clientX;
 			lenx=mx-dx;
 			dir=lenx>0?"right":"left";
-			inner.style.transform="translate3d("+(movex+lenx)+"px,0,0)"
+			inner.style.transform="translateX("+(movex+lenx)+"px)"
 		}
 		function ups(e){
 			var etime=e.timeStamp;
@@ -112,10 +112,10 @@
 				}
 				movex=-i*ow;
 				inner.style.transition="transform 1s";
-				inner.style.transform="translate3d("+movex+"px,0,0)"
+				inner.style.transform="translateX("+movex+"px)"
 			}else{
 				inner.style.transition="transform 1s";
-				inner.style.transform="translate3d("+movex+"px,0,0)";
+				inner.style.transform="translateX("+movex+"px)";
 			}
 			document.removeEventListener(mousemove,moves);
 			document.removeEventListener(mouseup,ups);
